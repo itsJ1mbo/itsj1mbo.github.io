@@ -431,6 +431,32 @@ body {
     font-size: 1.5rem;
 }
 
+.status-msg {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    display: none;
+    text-align: center;
+    border: 3px solid;
+}
+
+.status-msg.success {
+    display: block;
+    background-color: var(--green-mid);
+    color: var(--cream);
+    border-color: var(--green-dark);
+    box-shadow: 4px 4px 0px var(--green-dark);
+}
+
+.status-msg.error {
+    display: block;
+    background-color: #8a0000;
+    color: white;
+    border-color: #31493c;
+}
+
 /* Animaciones */
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .show { opacity: 1; transform: translateY(0); }

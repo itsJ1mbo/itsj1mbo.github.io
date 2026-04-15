@@ -1,7 +1,7 @@
 /* --- PALETA DE COLORES Y VARIABLES --- */
 :root {
     --gold: #b38137;
-    --brown-dark: #753800;
+    --brown-dark: #8A4300;
     --cream: #f3ffb6;
     --green-mid: #2c5530;
     --green-dark: #31493c;
@@ -78,11 +78,12 @@ body {
     justify-content: center; 
     min-height: 100vh; 
     padding: 4rem 10%;
-    gap: 30rem; 
+    gap: 25rem; /* Reducido de 30rem para evitar problemas en pantallas medianas */
 }
 
 .hero-content {
-    flex: 0 1 550px;
+    flex: 1 1 550px;
+    max-width: 600px; /* Asegura que no se desborde */
 }
 
 .glitch-text {
@@ -130,7 +131,7 @@ body {
     transform: rotate(2deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex-shrink: 0;
-    overflow: hidden; /* Para que la foto no se salga del borde */
+    overflow: hidden; 
 }
 
 .avatar-placeholder:hover {
@@ -186,12 +187,12 @@ body {
     color: var(--brown-dark);
 }
 
-/* --- SKILL TREE SECTION (Líneas añadidas) --- */
+/* --- SKILL TREE SECTION --- */
 .skills-section {
     padding: 5rem 10%;
     background-color: var(--gold);
-    border-top: 4px dashed var(--brown-dark); /* Línea superior */
-    border-bottom: 4px dashed var(--brown-dark); /* Línea inferior */
+    border-top: 4px dashed var(--brown-dark);
+    border-bottom: 4px dashed var(--brown-dark);
 }
 
 .skills-section .section-title {
@@ -256,7 +257,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Min reducido a 280px para evitar overflow en móviles pequeños */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
 }
 
@@ -383,13 +385,105 @@ body {
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
 
-/* Responsive */
+
+/* =========================================================================
+   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
+   ========================================================================= */
+
 @media (max-width: 1024px) {
     .hero { gap: 4rem; }
 }
 
 @media (max-width: 900px) {
-    .hero { flex-direction: column; text-align: center; gap: 2rem; }
-    .glitch-text { white-space: normal; }
-    .avatar-placeholder { width: 300px; height: 300px; }
+    /* Navbar: apilar el logo y los links */
+    .game-nav {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Hero: pasar a columna, centrar contenido */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+        padding: 4rem 5%; /* Reducir padding lateral */
+    }
+    .hero-content {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+    .glitch-text {
+        white-space: normal; /* Permitir que el texto salte de línea */
+        font-size: 3rem;
+    }
+    .avatar-placeholder {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+
+    /* Reducir padding general en secciones */
+    .skills-section, .quests-section, .footer-section {
+        padding: 4rem 5%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Ajustes específicos para móviles pequeños */
+    .glitch-text {
+        font-size: 2.2rem;
+    }
+    
+    .typewriter-text {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .avatar-placeholder {
+        width: 220px;
+        height: 220px;
+        font-size: 1.5rem;
+    }
+
+    /* Botones más amigables para toque */
+    .btn-primary {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+        width: 100%; /* Botones de ancho completo en móvil */
+        box-sizing: border-box;
+    }
+
+    .skills-section .section-title, 
+    .quests-section .section-title {
+        font-size: 2rem;
+    }
+
+    /* Forzar a una sola columna el grid de proyectos */
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustar el footer */
+    .footer-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .footer-box h2 {
+        font-size: 2rem;
+    }
+    
+    .social-links {
+        flex-direction: column; /* Apilar los links sociales */
+        gap: 1.5rem;
+        align-items: center;
+    }
 }

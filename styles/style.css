@@ -380,6 +380,57 @@ body {
     opacity: 0.8;
 }
 
+/* --- FORMULARIO DE CONTACTO --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 1.5rem 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    background-color: var(--brown-dark);
+    color: var(--cream);
+    border: 3px solid var(--brown-dark);
+    padding: 1rem;
+    outline: none;
+    box-shadow: 6px 6px 0px var(--green-dark); 
+    transition: all 0.2s ease;
+}
+
+/* Cambiamos un poco la opacidad del texto de pista */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--cream);
+    opacity: 0.6;
+}
+
+/* Efecto cuando el usuario hace clic para escribir */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--cream);
+    box-shadow: 8px 8px 0px var(--green-dark); 
+    transform: translate(-2px, -2px); 
+}
+
+/* Ajustes específicos para el área del mensaje */
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical; 
+}
+
+/* Ajuste del botón dentro del formulario para que cuadre bien */
+.contact-form .btn-primary {
+    margin: 1rem 0 0 0; 
+    width: 100%;
+    font-size: 1.5rem;
+}
+
 /* Animaciones */
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .show { opacity: 1; transform: translateY(0); }

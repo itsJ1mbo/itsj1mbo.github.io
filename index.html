@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaime (Jimbo) Vicente | Diseñador y Programador de Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+
+    <nav class="game-nav">
+        <div class="logo">JIMBO_WORKS</div>
+        <ul class="nav-links">
+            <li><a href="#about">[ STATUS ]</a></li>
+            <li><a href="#skills">[ SKILL TREE ]</a></li>
+            <li><a href="#projects">[ QUEST LOG ]</a></li>
+            <li><a href="#contact">[ MULTIPLAYER ]</a></li>
+            <li><a href="index-en.html" style="color: var(--gold);">[ EN ]</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="hero-content">
+            <h1 class="glitch-text">HOLA, SOY <span class="highlight">JAIME (JIMBO) VICENTE</span></h1>
+            <h2 class="typewriter-text" id="typewriter"></h2>
+            <p>
+                Actualmente estoy a punto de terminar el grado en
+                Desarollo de Videojuegos de la UCM. Me interesan
+                sobre todo los ámbitos del diseño de videojuegos,
+                programación de gameplay, sistemas y arquitectura de videojuegos. 
+                He participado en distintos proyectos creativos como diseñador y
+                programador y ganado algunos premios y menciones en varios eventos.
+            </p>
+            <a href="#projects" class="btn-primary">VER QUESTS <span>▶</span></a>
+        </div>
+        <div class="hero-avatar">
+            <div class="avatar-placeholder">
+                <img src="perfil.jpg" alt="Jaime Vicente" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </header>
+
+    <section id="skills" class="skills-section">
+        <h2 class="section-title">/// SKILL TREE (HABILIDADES)</h2>
+        <div class="skills-container hidden">
+            <div class="skill-category">
+                <h3>Programación y Motores</h3>
+                <div class="tags">
+                    <span class="tag">Gameplay</span>
+                    <span class="tag">Sistemas</span>
+                    <span class="tag">Arquitectura</span>
+                    <span class="tag">Unity (4+ años)</span>
+                    <span class="tag">Unreal Engine</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Conocimientos de Bajo Nivel</h3>
+                <div class="tags">
+                    <span class="tag">C/C++</span>
+                    <span class="tag">Motores Custom</span>
+                    <span class="tag">PS5 SDK</span>
+                    <span class="tag">SDL3</span>
+                    <span class="tag">PhysX</span>
+                    <span class="tag">OpenGL</span>
+                    <span class="tag">Ogre3D</span>
+                    <span class="tag">Optimización</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Diseño de Juego</h3>
+                <div class="tags">
+                    <span class="tag">Diseño de Niveles</span>
+                    <span class="tag">Diseño de Gameplay</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="quests-section">
+        <h2 class="section-title">/// QUEST LOG (EXPERIENCIA)</h2>
+        <div class="grid-container">
+            
+            <article class="project-card hidden">
+                <div class="card-image">ENGINE_DEV</div>
+                <div class="card-info">
+                    <h3>Motor de Videojuegos Custom</h3>
+                    <p>Desarrollo de un motor de videojuegos desde cero trabajando en un equipo de 10 personas (2025).</p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">Arquitectura</span>
+                        <span class="tag">Bajo Nivel</span>
+                        <span class="tag">Ogre3D</span>
+                        <span class="tag">Physx</span>
+                    </div>
+                    <a href="https://github.com" class="btn-secondary" target="_blank" rel="noopener noreferrer">VER REPOSITORIO</a>
+                </div>
+            </article>
+
+            <article class="project-card hidden">
+                <div class="card-image">GAME_C++</div>
+                <div class="card-info">
+                    <h3>Juego en C++ (Custom)</h3>
+                    <p>Creación de un juego desde cero utilizando librerías externas y C++ en equipo (2024).</p>
+                    <div class="tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">SDL3</span>
+                    </div>
+                    <a href="https://github.com/UCM-FDI-DISIA/LoreIpsum" class="btn-secondary target="_blank" rel="noopener noreferrer"">VER REPOSITORIO</a>
+                </div>
+            </article>
+
+            <article class="project-card hidden">
+                <div class="card-image">UNITY_GAMES</div>
+                <div class="card-info">
+                    <h3>Proyectos en Unity</h3>
+                    <p>Más de 4 años de experiencia desarrollando múltiples juegos y participando en eventos y jams con premios y menciones.</p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">Game Design</span>
+                        <span class="tag">Gameplay</span>
+                    </div>
+                    <a href="https://itsjimbo.itch.io" class="btn-secondary" target="_blank" rel="noopener noreferrer">VER PORTFOLIO</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="footer-section">
+        <div class="footer-box">
+            <h2>/// MULTIJUGADOR</h2>
+            <p>Inglés nivel profesional y Español nativo. Si buscas un programador resolutivo para tu equipo, envíame un mensaje.</p>
+            <a href="mailto:jimbo.works@pm.me" class="btn-primary">ENVIAR EMAIL ✉</a>
+            <div class="social-links">
+                <a href="https://itsjimbo.itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a>
+                <a href="https://github.com/itsJ1mbo" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/jaime-vicente-arroyo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p class="copyright">© 2026 Jaime (Jimbo) Vicente Arroyo. Leveling up @ UCM.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -78,12 +78,12 @@ body {
     justify-content: center; 
     min-height: 100vh; 
     padding: 4rem 10%;
-    gap: 25rem; /* Reducido de 30rem para evitar problemas en pantallas medianas */
+    gap: 25rem;
 }
 
 .hero-content {
     flex: 1 1 550px;
-    max-width: 600px; /* Asegura que no se desborde */
+    max-width: 600px;
 }
 
 .glitch-text {
@@ -257,7 +257,6 @@ body {
 
 .grid-container {
     display: grid;
-    /* Min reducido a 280px para evitar overflow en móviles pequeños */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
 }
@@ -385,17 +384,11 @@ body {
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
 
-
-/* =========================================================================
-   RESPONSIVE DESIGN (TABLETS Y MÓVILES)
-   ========================================================================= */
-
 @media (max-width: 1024px) {
     .hero { gap: 4rem; }
 }
 
 @media (max-width: 900px) {
-    /* Navbar: apilar el logo y los links */
     .game-nav {
         flex-direction: column;
         gap: 1.5rem;
@@ -406,20 +399,18 @@ body {
         justify-content: center;
         gap: 1rem;
     }
-
-    /* Hero: pasar a columna, centrar contenido */
     .hero {
         flex-direction: column;
         text-align: center;
         gap: 3rem;
-        padding: 4rem 5%; /* Reducir padding lateral */
+        padding: 4rem 5%;
     }
     .hero-content {
         flex: 1 1 auto;
         width: 100%;
     }
     .glitch-text {
-        white-space: normal; /* Permitir que el texto salte de línea */
+        white-space: normal; 
         font-size: 3rem;
     }
     .avatar-placeholder {
@@ -427,15 +418,12 @@ body {
         height: 300px;
         margin: 0 auto;
     }
-
-    /* Reducir padding general en secciones */
     .skills-section, .quests-section, .footer-section {
         padding: 4rem 5%;
     }
 }
 
 @media (max-width: 600px) {
-    /* Ajustes específicos para móviles pequeños */
     .glitch-text {
         font-size: 2.2rem;
     }
@@ -454,11 +442,10 @@ body {
         font-size: 1.5rem;
     }
 
-    /* Botones más amigables para toque */
     .btn-primary {
         font-size: 1.2rem;
         padding: 0.8rem 1.5rem;
-        width: 100%; /* Botones de ancho completo en móvil */
+        width: 100%;
         box-sizing: border-box;
     }
 
@@ -467,12 +454,10 @@ body {
         font-size: 2rem;
     }
 
-    /* Forzar a una sola columna el grid de proyectos */
     .grid-container {
         grid-template-columns: 1fr;
     }
 
-    /* Ajustar el footer */
     .footer-box {
         padding: 2rem 1.5rem;
     }
@@ -482,7 +467,7 @@ body {
     }
     
     .social-links {
-        flex-direction: column; /* Apilar los links sociales */
+        flex-direction: column; 
         gap: 1.5rem;
         align-items: center;
     }

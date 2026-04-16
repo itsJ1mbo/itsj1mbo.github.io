@@ -1,4 +1,4 @@
-/* --- PALETA DE COLORES Y VARIABLES --- */
+/* PALETA DE COLORES Y VARIABLES */
 :root {
     --gold: #b38137;
     --brown-dark: #8A4300;
@@ -10,7 +10,7 @@
     --font-text: 'Fira Code', monospace;
 }
 
-/* --- RESET Y BASE --- */
+/* RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -25,16 +25,18 @@ body {
     overflow-x: hidden;
 }
 
+/* Efecto TV antigua */
 .scanlines {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
     background-size: 100% 4px, 3px 100%;
     z-index: 9999;
     pointer-events: none;
 }
 
-/* --- NAVEGACIÓN --- */
+/* NAVEGACIÓN */
 .game-nav {
     display: flex;
     justify-content: space-between;
@@ -71,7 +73,30 @@ body {
     color: var(--gold);
 }
 
-/* --- HERO SECTION --- */
+/* SECCIONES GENERALES */
+.education-section,
+.skills-section,
+.quests-section {
+    padding: 5rem 10%;
+    background-color: var(--gold);
+    border-top: 4px dashed var(--brown-dark);
+    border-bottom: 4px dashed var(--brown-dark);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--brown-dark);
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+/* Excepcion especifica de margen para la seccion de educacion */
+.education-section .section-title {
+    margin-bottom: 4rem;
+}
+
+/* HERO SECTION */
 .hero {
     display: flex;
     align-items: center;
@@ -92,7 +117,6 @@ body {
     line-height: 1;
     margin-bottom: 1rem;
     color: var(--gold);
-    text-shadow: none;
     white-space: nowrap;
 }
 
@@ -116,7 +140,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* FOTO DE PERFIL */
+/* Foto de Perfil */
 .avatar-placeholder {
     width: 380px;
     height: 380px;
@@ -125,8 +149,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
     box-shadow: 12px 12px 0px var(--gold);
     transform: rotate(2deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -138,48 +160,52 @@ body {
     transform: rotate(0deg) scale(1.02);
 }
 
-/* --- BOTONES --- */
-.btn-primary {
+.avatar-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BOTONES */
+.btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 0.8rem 2rem;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 1.5rem;
     background-color: var(--brown-dark);
     color: var(--gold);
     border: 4px solid var(--gold);
     box-shadow: 4px 4px 0px var(--gold);
-    transition: all 0.2s ease;
 }
 
 .hero .btn-primary:hover {
     background-color: var(--gold);
     color: var(--brown-dark);
     transform: translateY(-4px); 
-    box-shadow: 4px 4px 0px var(--gold); 
 }
 
 .footer-box .btn-primary:hover {
     background-color: var(--gold);
     color: var(--brown-dark);
     transform: translateY(-4px);
-    border: 4px solid var(--brown-dark); 
+    border-color: var(--brown-dark); 
     box-shadow: 8px 8px 0px var(--brown-dark);
 }
 
 .btn-secondary {
-    display: inline-block;
     background-color: var(--brown-dark);
     color: var(--gold);
     border: 2px solid var(--gold);
-    font-family: var(--font-heading);
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     margin-top: 1rem;
-    text-decoration: none;
-    transition: all 0.2s ease;
 }
 
 .btn-secondary:hover {
@@ -187,28 +213,94 @@ body {
     color: var(--brown-dark);
 }
 
-/* --- SKILL TREE SECTION --- */
-.skills-section {
-    padding: 5rem 10%;
-    background-color: var(--gold);
-    border-top: 4px dashed var(--brown-dark);
-    border-bottom: 4px dashed var(--brown-dark);
+/* SECCION EDUCACION */
+.education-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
 }
 
-.skills-section .section-title {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--brown-dark);
+/* Linea de tiempo */
+.education-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--brown-dark);
+}
+
+.edu-item {
+    position: relative;
     margin-bottom: 3rem;
-    text-align: center;
 }
 
+/* Punto del Timeline */
+.edu-item::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--gold);
+    border: 4px solid var(--brown-dark);
+    z-index: 2;
+}
+
+.edu-card {
+    background-color: var(--brown-dark);
+    border: 2px solid var(--cream);
+    padding: 2rem;
+    box-shadow: 8px 8px 0px var(--green-dark);
+    color: var(--cream);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border-bottom: 2px dashed var(--gold);
+    padding-bottom: 0.5rem;
+}
+
+.edu-header h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.edu-date {
+    font-family: var(--font-heading);
+    background-color: var(--green-mid);
+    color: var(--cream);
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--gold);
+}
+
+.institution {
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.edu-desc {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* SECCION SKILL TREE */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -239,22 +331,7 @@ body {
     margin: 0.2rem;
 }
 
-/* --- QUEST LOG / PROYECTOS --- */
-.quests-section {
-    padding: 5rem 10%;
-    background-color: var(--gold);
-    border-top: 4px dashed var(--brown-dark);
-    border-bottom: 4px dashed var(--brown-dark);
-}
-
-.quests-section .section-title {
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    color: var(--brown-dark);
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
+/* SECCION QUEST LOG */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -324,7 +401,7 @@ body {
     border: 1px solid var(--brown-dark);
 }
 
-/* --- MULTIJUGADOR / FOOTER --- */
+/* FOOTER Y FORMULARIO */
 .footer-section {
     padding: 5rem 10%;
     text-align: center;
@@ -355,32 +432,6 @@ body {
     min-width: 250px;
 }
 
-.social-links {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.social-links a {
-    color: var(--brown-dark);
-    text-decoration: none;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.social-links a:hover {
-    color: var(--green-dark);
-    text-decoration: underline;
-}
-
-.copyright {
-    font-size: 0.8rem;
-    opacity: 0.8;
-}
-
-/* --- FORMULARIO DE CONTACTO --- */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -403,14 +454,12 @@ body {
     transition: all 0.2s ease;
 }
 
-/* Cambiamos un poco la opacidad del texto de pista */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: var(--cream);
     opacity: 0.6;
 }
 
-/* Efecto cuando el usuario hace clic para escribir */
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--cream);
@@ -418,19 +467,18 @@ body {
     transform: translate(-2px, -2px); 
 }
 
-/* Ajustes específicos para el área del mensaje */
 .contact-form textarea {
     min-height: 150px;
     resize: vertical; 
 }
 
-/* Ajuste del botón dentro del formulario para que cuadre bien */
 .contact-form .btn-primary {
     margin: 1rem 0 0 0; 
     width: 100%;
     font-size: 1.5rem;
 }
 
+/* Mensajes de Estado AJAX */
 .status-msg {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -457,10 +505,36 @@ body {
     border-color: #31493c;
 }
 
-/* Animaciones */
+/* Iconos */
+.social-links {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    color: var(--brown-dark);
+    text-decoration: none;
+    font-size: 2.2rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--green-dark);
+    transform: scale(1.15) translateY(-3px);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* ANIMACIONES JS */
 .hidden { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
 .show { opacity: 1; transform: translateY(0); }
 
+/* DISENIO RESPONSIVO */
 @media (max-width: 1024px) {
     .hero { gap: 4rem; }
 }
@@ -471,63 +545,63 @@ body {
         gap: 1.5rem;
         padding: 1.5rem;
     }
+    
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
     }
+    
     .hero {
         flex-direction: column;
         text-align: center;
         gap: 3rem;
         padding: 4rem 5%;
     }
+    
     .hero-content {
         flex: 1 1 auto;
         width: 100%;
     }
+    
     .glitch-text {
         white-space: normal; 
         font-size: 3rem;
     }
+    
     .avatar-placeholder {
         width: 300px;
         height: 300px;
         margin: 0 auto;
     }
-    .skills-section, .quests-section, .footer-section {
+    
+    /* Agrupado el padding responsivo */
+    .education-section, 
+    .skills-section, 
+    .quests-section, 
+    .footer-section {
         padding: 4rem 5%;
     }
 }
 
 @media (max-width: 600px) {
-    .glitch-text {
-        font-size: 2.2rem;
-    }
+    .glitch-text { font-size: 2.2rem; }
+    .typewriter-text { font-size: 1.3rem; }
+    .hero p { font-size: 1rem; }
     
-    .typewriter-text {
-        font-size: 1.3rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
     .avatar-placeholder {
         width: 220px;
         height: 220px;
-        font-size: 1.5rem;
     }
 
     .btn-primary {
         font-size: 1.2rem;
         padding: 0.8rem 1.5rem;
         width: 100%;
-        box-sizing: border-box;
     }
 
-    .skills-section .section-title, 
-    .quests-section .section-title {
+    /* Titulos generales adaptables */
+    .section-title {
         font-size: 2rem;
     }
 
@@ -535,13 +609,8 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .footer-box {
-        padding: 2rem 1.5rem;
-    }
-    
-    .footer-box h2 {
-        font-size: 2rem;
-    }
+    .footer-box { padding: 2rem 1.5rem; }
+    .footer-box h2 { font-size: 2rem; }
     
     .social-links {
         flex-direction: column; 
